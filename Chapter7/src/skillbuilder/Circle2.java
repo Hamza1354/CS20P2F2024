@@ -1,6 +1,6 @@
-package skillbuilders;1
+package skillbuilder;
 
-public class CirclePart2 {
+public class Circle2 {
 
     public static void main(String[] args) {
       

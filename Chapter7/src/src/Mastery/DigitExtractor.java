@@ -1,6 +1,6 @@
 /*
 
-Program: Diget extreactor      Date: November 1, 2024
+Program: DigitExtractor     Date: November 1, 2024
 
 Purpose: This will display the numbers place value for the users input 
 

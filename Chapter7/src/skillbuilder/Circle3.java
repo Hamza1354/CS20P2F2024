@@ -1,17 +1,17 @@
-package skillbuilders;
+package skillbuilder;
 
-		public class CirclePart3 {
+		public class Circle3 {
 
 		    private double radius;
 		    private static double PI = 3.14;
 
 		
-		    public CirclePart3() {
+		    public Circle3() {
 		        radius = 1;
 		    }
 
 		  
-		    public CirclePart3(double r) {
+		    public Circle3(double r) {
 		        radius = r;	
 		    }
 
@@ -32,8 +32,8 @@ package skillbuilders;
 		    }
 
 		    public boolean equals(Object c) {
-		        if (c instanceof CirclePartOne) {
-		            CirclePartOne testObj = (CirclePartOne) c;
+		        if (c instanceof Circle1) {
+		            Circle1 testObj = (Circle1) c;
 		            return testObj.getRadius() == radius;
 		        }
 		        return false;

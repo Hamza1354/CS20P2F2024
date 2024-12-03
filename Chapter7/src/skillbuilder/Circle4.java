@@ -1,16 +1,16 @@
-	package skillbuilders;
+	package skillbuilder;
 
-	public class CirclePart4 {
+	public class Circle4 {
 
 	    private double radius;
 	    private static final double PI = 3.14;
 	    
-	    public CirclePart4() {
+	    public Circle4() {
 	        this.radius = 1;
 	    }
 
 	    
-	    public CirclePart4(double r) {
+	    public Circle4(double r) {
 	        this.radius = r;
 	    }
 
@@ -34,7 +34,7 @@
 	    public boolean equals(Object obj) {
 	        if (this == obj) return true; 
 	        if (obj == null || getClass() != obj.getClass()) return false; 
-	        CirclePartOne other = (CirclePartOne) obj;
+	        Circle1 other = (Circle1) obj;
 	        return Double.compare(other.radius, radius) == 0; 
 	    }
 
