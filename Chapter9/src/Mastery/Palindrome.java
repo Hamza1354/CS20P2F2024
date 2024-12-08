@@ -2,7 +2,7 @@ package Mastery;
 
 public class Palindrome {
 
-    // Method to confirm if it a  palindrome by having a string
+    // Method to confirm if it a palindrome by having a string
 	
     public static boolean isPalindrome(String string) {
     	
@@ -10,19 +10,19 @@ public class Palindrome {
     	
         string = string.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-        int left = 0;
-        int right = string.length() - 1;
+        int LEFT1 = 0;
+        int RIGHT2 = string.length() - 1;
 
-        while (left < right) {
+        while (LEFT1 < RIGHT2) {
         	
-            // match the charactors 
+            // match the characters 
         	
-            if (string.charAt(left) != string.charAt(right)) {
+            if (string.charAt(LEFT1) != string.charAt(RIGHT2)) {
             	
                 return false;  // if not a palindrome than the program ends here
             }
-            left++;
-            right--;
+            LEFT1++;
+            RIGHT2--;
         }
 
         return true;  // the characters is a string so it's a palindrome

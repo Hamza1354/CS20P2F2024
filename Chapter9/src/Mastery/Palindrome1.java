@@ -1,8 +1,7 @@
 /*
-Program: PalindromeApp     Date: November 15, 2024
+Program: Palindrome     Date: November 15, 2024
 
-Purpose: This program serves as the user interface for the Palindrome class,
-allowing users to check if a word or phrase is a palindrome.
+Purpose:the program helps user to figure out if its a Palindrome.
 
 Author: Hamza ismael, 
 School: CHHS
@@ -21,13 +20,12 @@ public class Palindrome1 {
         System.out.print("Enter a word or phrase, and this program will identify if it's a palindrome: ");
         String input = scanner.nextLine();
 
-        // Check if the string is a palindrome using the Palindrome class
+        // use the Palindrome class to check if the user response if it Palindrome
+        
         if (Palindrome.isPalindrome(input)) {
             System.out.println("The string is a palindrome.");
         } else {
             System.out.println("The string is not a palindrome.");
         }
-
-        scanner.close(); // Close the scanner to prevent resource leaks
     }
 }
