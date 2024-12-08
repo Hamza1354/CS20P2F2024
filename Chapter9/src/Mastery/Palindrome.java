@@ -21,7 +21,8 @@ public class Palindrome {
             	
                 return false;  // if not a palindrome than the program ends here
             }
-            
+            LEFT1++;
+            RIGHT2--;
         }
 
         return true;  // the characters is a string so it's a palindrome
