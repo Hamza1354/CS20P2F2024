@@ -1,93 +1,73 @@
 /*
 
+Program: LunchOrder.java          Last Date of this Revision: November 24, 2024
 
-Program: Lunch order      Date: November 5, 2024
+Purpose: An program that uses  for loops to output a table that displays number in 
+ multiples of ten.
 
-Purpose: displays the lunch order price
-
-
+Author: Hamza ismael, 
 School: CHHS
 Course: Computer Science 20
  
+
 */
+
 package src.Mastery;
 
 import java.util.Scanner;
-
-class Food {
-    private double price;
-    private int fat;
-    private int carbs;
-    private int fiber;
-
-    public Food(double price, int fat, int carbs, int fiber) {
-        this.price = price;
-        this.fat = fat;
-        this.carbs = carbs;
-        this.fiber = fiber;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getFat() {
-        return fat;
-    }
-
-    public int getCarbs() {
-        return carbs;
-    }
-
-    public int getFiber() {
-        return fiber;
-    }
-}
+import java.text.DecimalFormat;
 
 public class LunchOrder {
+
     public static void main(String[] args) {
-        // Create Food objects with prices 
-        Food hamburger = new Food(1.85, 9, 33, 1);
-        Food salad = new Food(2.00, 1, 11, 5);
-        Food frenchFries = new Food(1.30, 11, 36, 4);
-        Food soda = new Food(0.95, 0, 38, 0);
-
-        Scanner scanner = new Scanner(System.in);
-
-        // Prompt user for quantities
-        System.out.print("Enter the number of hamburgers: ");
-        int numHamburgers = scanner.nextInt();
         
-        System.out.print("Enter the number of salads: ");
-        int numSalads = scanner.nextInt();
+        // Create a new Scanner, 
+    	// made Food, and Decimal Format object
+    	
+        Scanner input = new Scanner(System.in);
+        DecimalFormat formatter = new DecimalFormat("#.##");
+        Food order = new Food();
         
-        System.out.print("Enter the number of french fries: ");
-        int numFrenchFries = scanner.nextInt();
+        // Asking user for how many burgers, salads, fries, and sodas provided nutrition values for each
+        System.out.print("Enter number of hamburgers: ");
+        order.hamburger(input.nextInt(), 9, 33, 1);
+        System.out.println("");
         
-        System.out.print("Enter the number of sodas: ");
-        int numSodas = scanner.nextInt();
-
-        // Calculate total
-        double total = (numHamburgers * hamburger.getPrice()) +
-                       (numSalads * salad.getPrice()) +
-                       (numFrenchFries * frenchFries.getPrice()) +
-                       (numSodas * soda.getPrice());
-
-        // Display total
-        System.out.printf("Total cost of the order: $%.2f%n", total);
+        System.out.print("Enter number of salads: ");
+        order.salad(input.nextInt(), 1, 11, 5);
+        System.out.println("");
         
-      
+        System.out.print("Enter number of french fries: ");
+        order.frenchFries(input.nextInt(), 11, 36, 4);
+        System.out.println("");
+        
+        System.out.print("Enter number of sodas: ");
+        order.soda(input.nextInt(), 0, 38, 0);
+        System.out.println("");
+        
+        // Outputs total amount of money user owes for the food by accessing it through total method
+        System.out.println("Your order comes to: $" + formatter.format(order.total()));
+        
+        input.close(); // Close the scanner to prevent resource leaks
     }
 }
 
+/* Screen Dump
+
+Test case 1:
+Enter number of hamburgers: 2
+Each hamburger has 9.0g of fat, 33.0g of carbs, and 1.0g of fiber
+
+Enter number of salads: 2
+Each salad has 1.0g of fat, 11.0g of carbs, and 5.0g of fiber
+
+Enter number of french fries: 2
+Each serving of french fries has 11.0g of fat, 36.0g of carbs, and 4.0g of fiber
+
+Enter number of sodas: 2
+Each soda has 0.0g of fat, 38.0g of carbs, and 0.0g of fiber
+
+Your order comes to: $6.1
 
 
-
-
-/* screen dump
-Enter the number of hamburgers: 2
-Enter the number of salads: 34
-Enter the number of french fries: 6
-Enter the number of sodas: 3
-Total cost of the order: $82.35
-*/
+ */

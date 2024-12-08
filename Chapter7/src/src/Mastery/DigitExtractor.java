@@ -1,126 +1,178 @@
 /*
 
-Program: DigitExtractor     Date: November 1, 2024
+Program: DigitExtractor.java          Last Date of this Revision: Dec . 12, 2024
 
-Purpose: This will display the numbers place value for the users input 
+Purpose: DigitExtractor program that give  the user a  option for their  integer and then displays the ones,
+tens, and hundreds digit of the number.
 
-
+Author: Hamza ismael, 
 School: CHHS
 Course: Computer Science 20
  
+
 */
 
 package src.Mastery;
 
 import java.util.Scanner;
 
-class Num {
-    private int number;
-
-    public Num(int number) {
-        this.number = number;
-    }
-
-    public int getWhole() {
-        return number;
-    }
-
-    public int getOnes() {
-        return Math.abs(number) % 10;
-    }
-
-    public int getTens() {
-        return (Math.abs(number) / 10) % 10;
-    }
-
-    public int getHundreds() {
-        return (Math.abs(number) / 100) % 10;
-    }
-}
-
 public class DigitExtractor {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.print("Enter an integer: ");
-            int userInput;
 
+	public static void main(String[] args) {
+		// TODO method stub
+		// new scanner object and number object by asking user for integer to use as parameter for number object constructor method
+		Scanner Input = new Scanner(System.in);
+		System.out.println("Enter an integer: ");
+		
+		Num integer = new Num(Input.nextInt());
+		
+		// making variable for users choice on giving a  integer
+		String choice;
+		
+		
+		
+		//while loop to give user option on classifying  integer 
+		while (true) {
+			//providing  user with 5 option on what to do with a integer
+			System.out.println("Show (W)hole number.");
+			System.out.println("Show (O)nes place number.");
+			System.out.println("Show (T)ens place number.");
+			System.out.println("Show (H)undreds place number.");
+			System.out.println("(Q)uit");
 
-            try {
-                userInput = Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid integer.");
-                continue;
-            }
+			
+			
+			System.out.print("Enter your choice: ");
+			//take in the  users choice 
+			choice = Input.next();
+			//make it  lower case for the user choice isn't case sensitive
+			choice = choice.toLowerCase();
+			//if they picked choice q then it will ends the program
+			if (choice.equals("q")) {
+				break;
+			
+			}
+			
+			
+			// if they picked choice W,O,T, or H then the number that fit the requirement will be displayed
+			
+			
+			switch (choice) {
+			
+			// choice W will output the whole integer
+			
+			case "w":System.out.println("your integer is " + integer.wholeNum()); break;
+			
+			//choice O accesses method which outputs ones places of number
+			
+			case "o": System.out.println("The ones place digit is: " + integer.onesPlace());  break;
+			
+			//choice T accesses method which outputs ten place of number
+			
+			case "t":System.out.println("The tens place digit is: " + integer.tensPlace());break;
+			
+			//choice H accesses method which outputs hundreds place of number
+			
+			case "h":System.out.println("The hundreds place digit is: " + integer.hundredsPlace()); break;
+			
+			//if user enters a choice that is not displayed then will tell user to try again
+			
+			default:System.out.println("You entered a invalid choice please try again");
+			
+			}
+		}
+	}
+	}
 
-            Num numObj = new Num(userInput);
+/* Screen Dump
 
-            while (true) {
-                System.out.println("\nInput W for whole number");
-                System.out.println("Input O for ones place");
-                System.out.println("Input T for tens");
-                System.out.println("Input H for hundreds");
-                System.out.println("Input Q to quit");
-                System.out.print("Enter your choice: ");
-                String choice = scanner.nextLine().trim().toUpperCase();
-
-                switch (choice) {
-                    case "W":
-                        System.out.println("Whole number: " + numObj.getWhole());
-                        break;
-                    case "O":
-                        System.out.println("Ones digit: " + numObj.getOnes());
-                        break;
-                    case "T":
-                        System.out.println("Tens digit: " + numObj.getTens());
-                        break;
-                    case "H":
-                        System.out.println("Hundreds digit: " + numObj.getHundreds());
-                        break;
-                    case "Q":
-                        System.out.println("Exiting the program.");
-                        scanner.close();
-                        return;
-                    default:
-                        System.out.println("Invalid choice. Please try again.");
-                }
-            }
-        }
-    }
-}
-        
-  /* screen dump
-Enter an integer: 324
-
-Input W for whole number
-Input O for ones place
-Input T for tens
-Input H for hundreds
-Input Q to quit
-Enter your choice: h
-Hundreds digit: 3
-
-Input W for whole number
-Input O for ones place
-Input T for tens
-Input H for hundreds
-Input Q to quit
+test case 1:
+Enter an integer:456
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: w
+your integer is 456
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
 Enter your choice: o
-Ones digit: 4
-
-Input W for whole number
-Input O for ones place
-Input T for tens
-Input H for hundreds
-Input Q to quit
+The ones place digit is: 6
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
 Enter your choice: t
-Tens digit: 2
-
-Input W for whole number
-Input O for ones place
-Input T for tens
-Input H for hundreds
-Input Q to quit
+The tens place digit is: 5
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: h
+The hundreds place digit is: 4
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: 1
+You entered a invalid choice please try again
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
 Enter your choice: q
-Exiting the application. 
-*/
+
+test case 2:
+Enter an integer: 768
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: w
+your integer is 768
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: o
+The ones place digit is: 8
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: t
+The tens place digit is: 6
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: h
+The hundreds place digit is: 7
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: 2
+You entered a invalid choice please try again
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undreds place number.
+(Q)uit
+Enter your choice: q
+
+
+ */
