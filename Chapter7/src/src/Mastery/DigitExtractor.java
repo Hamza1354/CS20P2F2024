@@ -1,6 +1,6 @@
 /*
 
-Program: DigitExtractor.java          Last Date of this Revision: Dec . 12, 2024
+Program: DigitExtractor.java          Last Date of this Revision: Dec . 5, 2024
 
 Purpose: DigitExtractor program that give  the user a  option for their  integer and then displays the ones,
 tens, and hundreds digit of the number.

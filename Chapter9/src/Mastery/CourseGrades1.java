@@ -12,10 +12,10 @@ package Mastery;
 
 import java.util.Scanner;
 
-public class CourseGradesApp {
+public class CourseGrades1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Main GB = new Main();
+        COURSE GB = new COURSE();
 
         // store grades and show them
         GB.getGrades();

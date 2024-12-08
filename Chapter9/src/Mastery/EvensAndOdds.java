@@ -1,9 +1,9 @@
 /*
-Program: EvensAndOdds      Date: November 14, 2024
+Program: EvensAndOdds      Date:  2024
 
-Purpose: the random numbers between 0 and 90 is classified between odds and evens
+Purpose: The random numbers between 0 and 90 are classified as odds and evens.
 
-Author: Hamza ismael, 
+Author: Hamza Ismael
 School: CHHS
 Course: Computer Science 20
 */
@@ -14,38 +14,36 @@ import java.util.Random;
 
 public class EvensAndOdds {
     private static final int full_num = 25;
-    private static final int max = 100;
+    private static final int max = 90; // Set max to 90
 
-    // method for generating numbers
+    // Method for generating numbers
     public int[] generateRandomNumbers() {
         Random random = new Random();
         int[] numbers = new int[full_num];
 
-        // get 25 number from 0 to 90
-        
-        for (int num = 0; num < full_num ; num++) {
-            numbers[num] = random.nextInt(max); // Generate random number between 0 and 99
+        // Get 25 numbers from 0 to 90
+        for (int num = 0; num < full_num; num++) {
+            numbers[num] = random.nextInt(max + 1); // Generate random number between 0 and 90
         }
         return numbers;
     }
 
-    // method to classify  the numbers in odd and even
-    
+    // Method to classify odd and even
     public String[] categorizeNumbers(int[] numbers) {
-        StringBuilder EVENS = new StringBuilder();
-        StringBuilder ODDS = new StringBuilder();
+        StringBuilder evens = new StringBuilder();
+        StringBuilder odds = new StringBuilder();
 
         for (int between_numbers : numbers) {
         	
-            // check if their odd or even
+            // Check if  odd or even
         	
             if (between_numbers % 2 == 0) {
-            	EVENS.append(between_numbers).append(" ");
+                evens.append(between_numbers).append(" ");
             } else {
-            	ODDS.append(between_numbers).append(" ");
+                odds.append(between_numbers).append(" ");
             }
         }
-        return new String[]{EVENS.toString(), ODDS.toString()};
+        return new String[]{evens.toString(), odds.toString()};
     }
 
     // Method to show results

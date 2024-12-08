@@ -8,7 +8,7 @@ public class Palindrome {
     	
         // Remove non-alphabetic characters and convert to lowercase
     	
-        string = string.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        string = string.replaceAll(" ", "").toLowerCase();
 
         int LEFT1 = 0;
         int RIGHT2 = string.length() - 1;
@@ -21,8 +21,7 @@ public class Palindrome {
             	
                 return false;  // if not a palindrome than the program ends here
             }
-            LEFT1++;
-            RIGHT2--;
+            
         }
 
         return true;  // the characters is a string so it's a palindrome

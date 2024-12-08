@@ -1,10 +1,8 @@
-
-
 package Mastery;
 
 import java.util.Scanner;
 
-public class Main {
+public class COURSE {
     private final int number  = 12;
     private final int NUMBER = 5;
     private int[][] GRADES1 = new int[number][NUMBER];
